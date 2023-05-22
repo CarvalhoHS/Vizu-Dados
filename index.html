@@ -13,7 +13,7 @@
     <h5>Trabalho Vizualização de dados</h5>
 </div>
     <div class="slidecontainer">
-        <input type="range" min="0" max="100" value="0" class="slider" id="myRange" step="0.5">
+        <input type="range" min="0" max="100" value="0" class="slider" id="myRange" step="0.1">
       </div>
     <div id="main">
     <div id="story"></div>
@@ -47,10 +47,10 @@ paragrafo.innerHTML = "Sexto Semestre"
 }
 }
 
-const steps = [
+/* const steps = [
   {
     key: "zero",
-    chartType: "bar",
+    chartType: "treemap",
     groups: [
       {
         key: "Tempo / 24 Horas",
@@ -168,7 +168,249 @@ const steps = [
       }
     ],
   },
-];;
+];; */
+/* const groups = [
+  {
+    key: "Obrigações",
+    data: [
+      { key: "Higiene e Cuidados", value: 2},
+      { key: "Atividade Fisica", value: 1},
+      { key: "Dormir", value: 8},
+    ],
+  },
+  {
+    key: "Estudo",
+    data: [
+      { key: "Aulas", value: 6},
+      { key: "Projetos Pessoais", value: 1},
+      { key: "Passar no Vestibular", value: 2 },
+    ],
+  },
+  {
+    key: "Lazer",
+    data: [
+      { key: "Series", value: 2},
+      { key: "Jogos", value: 2},
+    ],
+  },
+] */
+const baseStep = {
+  title: "A historia de um Universitario de TIC",
+  titleAnchor: "middle",
+  subtitle: "Alo",
+  subtitleAnchor: "middle",
+  showValues: true,
+  showDatumLabels: true,
+};
+const steps = [
+{
+    key: "zero",
+    chartType: "treemap",
+    groups: [
+    {
+    key: "Obrigações",
+    data: [
+      { key: "Higiene e Cuidados", value: 2},
+      { key: "Atividade Fisica", value: 1},
+      { key: "Dormir", value: 8},
+    ],
+  },
+  {
+    key: "Estudo",
+    data: [
+      { key: "Aulas", value: 6},
+      { key: "Projetos Pessoais", value: 1},
+      { key: "Passar no Vestibular", value: 2 },
+    ],
+  },
+  {
+    key: "Lazer",
+    data: [
+      { key: "Series", value: 2},
+      { key: "Jogos", value: 2},
+    ],
+  },
+    ],
+    ...baseStep,
+  },
+  {
+    key: "one",
+    chartType: "treemap",
+    groups: [
+    {
+    key: "Obrigações",
+    data: [
+      { key: "Higiene e Cuidados", value: 2},
+      { key: "Atividade Fisica", value: 1},
+      { key: "Dormir", value: 8},
+    ],
+  },
+  {
+    key: "Estudo",
+    data: [
+      { key: "Aulas", value: 4},
+      { key: "Projetos Pessoais", value: 2},
+      { key: "Estudo pra Facul", value: 2 },
+    ],
+  },
+  {
+    key: "Lazer",
+    data: [
+      { key: "Series", value: 1},
+      { key: "Jogos", value: 2},
+      { key: "Bar", value: 2},
+    ],
+  },
+    ],
+    ...baseStep,
+  },{
+    key: "two",
+    chartType: "treemap",
+    groups: [
+    {
+    key: "Obrigações",
+    data: [
+      { key: "Higiene e Cuidados", value: 2},
+      { key: "Atividade Fisica", value: 1},
+      { key: "Dormir", value: 8},
+    ],
+  },
+  {
+    key: "Estudo",
+    data: [
+      { key: "Aulas", value: 4},
+      { key: "Projetos Pessoais", value: 2},
+      { key: "Estudo Pra Facul", value: 3},
+    ],
+  },
+  {
+    key: "Lazer",
+    data: [
+      { key: "Jogos", value: 2},
+      { key: "Bar", value: 2 },
+    ],
+  },
+    ],
+    ...baseStep,
+  },{
+    key: "tree",
+    chartType: "treemap",
+    groups: [
+    {
+    key: "Obrigações",
+    data: [
+      { key: "Higiene e Cuidados", value: 2},
+      { key: "Atividade Fisica", value: 1},
+      { key: "Dormir", value: 8},
+    ],
+  },
+  {
+    key: "Estudo",
+    data: [
+      { key: "Aulas", value: 4},
+      { key: "Projetos Pessoais", value: 1},
+      { key: "Estudo Para Facul", value: 3},
+      { key: "Bolsa de Estudos", value: 3}
+    ],
+  },
+  {
+    key: "Lazer",
+    data: [
+      { key: "Bar", value: 2},
+    ],
+  },
+    ],
+    ...baseStep,
+  },{
+    key: "four",
+    chartType: "treemap",
+    groups: [
+    {
+    key: "Obrigações",
+    data: [
+      { key: "Higiene e Cuidados", value: 2},
+      { key: "Atividade Fisica", value: 1},
+      { key: "Dormir", value: 8},
+    ],
+  },
+  {
+    key: "Estudo",
+    data: [
+      { key: "Aulas", value: 3},
+      { key: "Projetos Pessoais", value: 1},
+      { key: "Estudo Para Facul", value: 4},
+      { key: "Bolsa de Estudos", value: 3}
+    ],
+  },
+  {
+    key: "Lazer",
+    data: [
+      { key: "Bar", value: 2},
+    ],
+  },
+    ],
+    ...baseStep,
+  },{
+    key: "five",
+    chartType: "treemap",
+    groups: [
+    {
+    key: "Obrigações",
+    data: [
+      { key: "Higiene e Cuidados", value: 2},
+      { key: "Dormir", value: 6},
+    ],
+  },
+  {
+    key: "Estudo",
+    data: [
+      { key : "TCC", value: 3},
+      { key: "Aulas", value: 3},
+      { key: "Projetos Pessoais", value: 1},
+      { key: "Estudo Para Facul", value: 4},
+      { key: "Bolsa de Estudos", value: 3}
+    ],
+  },
+  {
+    key: "Lazer",
+    data: [
+      { key: "Bar", value: 2},
+    ],
+  },
+    ],
+    ...baseStep,
+  },{
+    key: "six",
+    chartType: "treemap",
+    groups: [
+    {
+    key: "Obrigações",
+    data: [
+      { key: "Higiene e Cuidados", value: 2},
+      { key: "Dormir", value: 3},
+    ],
+  },
+  {
+    key: "Estudo",
+    data: [
+      { key: "TCC", value: 3},
+      { key: "Aulas", value: 3},
+      { key: "Projetos Pessoais", value: 1},
+      { key: "Passar no Vestibular", value: 2 },
+      { key: "Atividades Complementares", value : 2}
+    ],
+  },
+  {
+    key: "Lazer",
+    data: [
+      { key: "Bar", value: 3},
+    ],
+  },
+    ],
+    ...baseStep,
+  },
+];
+
 const story = makeStory(div, steps);
 const onChange = (value) => {
   if (value < 1 / 7) {
