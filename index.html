@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Trabalho</title>
+</head>
+<body>
+    <div id="header">
+    <h1>A Historia de um Universitario de TIC</h1>
+    <h5>Trabalho Vizualização de dados</h5>
+</div>
+    <div class="slidecontainer">
+        <input type="range" min="0" max="100" value="0" class="slider" id="myRange" step="0.5">
+      </div>
+    <div id="main">
+    <div id="story"></div>
+    <p id="fase">Antes da Faculdade</p>
+    </div>
+</body>
+<script type="module">
+    import { makeStory } from "https://cdn.jsdelivr.net/npm/plotteus";
+    const div = document.querySelector("#story");
+
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+var paragrafo = document.getElementById("fase")
+
+slider.oninput = function() {
+onChange(slider.value / 100)
+if ((slider.value / 100) < 1 / 7){
+paragrafo.innerHTML = "Antes da Faculdade"
+} else if ((slider.value / 100 )< 2 / 7){
+paragrafo.innerHTML = "Primeiro Semestre"
+}else if ((slider.value / 100 )< 3 / 7){
+paragrafo.innerHTML = "Segundo Semestre"
+}else if ((slider.value / 100 )< 4 / 7){
+paragrafo.innerHTML = "Terceiro Semestre"
+}else if ((slider.value / 100 )< 5 / 7){
+paragrafo.innerHTML = "Quarto Semestre"
+}else if ((slider.value / 100 )< 6 / 7){
+paragrafo.innerHTML = "Quinto Semestre"
+}else{
+paragrafo.innerHTML = "Sexto Semestre"
+}
+}
+
+const steps = [
+  {
+    key: "zero",
+    chartType: "bar",
+    groups: [
+      {
+        key: "Tempo / 24 Horas",
+        data: [
+          { key: "Dormir", value: 8 },
+          { key: "Aulas", value: 6 },
+          { key: "Estudo", value: 4 },
+          { key: "Lazer", value: 4},
+          { key: "Obrigações", value: 2 },
+        ],
+      }
+    ],
+  },
+  {
+    key: "one",
+    chartType: "bar",
+    groups: [
+      {
+        key: "Tempo / 24 Horas",
+        data: [
+          { key: "Dormir", value: 8 },
+          { key: "Aulas", value: 4 },
+          { key: "Estudo", value: 4 },
+          { key: "Lazer", value: 4},
+          { key: "Obrigações", value: 2 },
+          { key: "Bar", value: 2},
+        ],
+      }
+    ],
+  },
+  {
+    key: "two",
+    chartType: "bar",
+    groups: [
+      {
+        key: "Tempo / 24 Horas",
+        data: [
+          { key: "Dormir", value: 8 },
+          { key: "Aulas", value: 4 },
+          { key: "Estudo", value: 5 },
+          { key: "Lazer", value: 3},
+          { key: "Obrigações", value: 2 },
+          { key: "Bar", value: 2},
+        ],
+      }
+    ],
+  },
+  {
+    key: "tree",
+    chartType: "bar",
+    groups: [
+      {
+        key: "Tempo / 24 Horas",
+        data: [
+          { key: "Dormir", value: 8 },
+          { key: "Aulas", value: 4 },
+          { key: "Estudo", value: 5 },
+          { key: "Lazer", value: 0.5},
+          { key: "Obrigações", value: 4.5 },
+          { key: "Bar", value: 2},
+        ],
+      }
+    ],
+  },
+  {
+    key: "four",
+    chartType: "bar",
+    groups: [
+      {
+        key: "Tempo / 24 Horas",
+        data: [
+          { key: "Dormir", value: 8 },
+          { key: "Aulas", value: 3 },
+          { key: "Estudo", value: 6 },
+          { key: "Lazer", value: 0.2},
+          { key: "Obrigações", value: 4.5 },
+          { key: "Bar", value: 2},
+        ],
+      }
+    ],
+  },
+  {
+    key: "five",
+    chartType: "bar",
+    groups: [
+      {
+        key: "Tempo / 24 Horas",
+        data: [
+          { key: "Dormir", value: 6 },
+          { key: "Aulas", value: 3 },
+          { key: "Estudo", value: 6 },
+          { key: "Lazer", value: 0.2},
+          { key: "Obrigações", value: 4.5 },
+          { key: "Bar", value: 2},
+          { key: "TCC", value: 2},
+        ],
+      }
+    ],
+  },
+  {
+    key: "six",
+    chartType: "bar",
+    groups: [
+      {
+        key: "Tempo / 24 Horas",
+        data: [
+          { key: "Dormir", value: 2 },
+          { key: "Aulas", value: 3 },
+          { key: "Estudo", value: 8 },
+          { key: "Lazer", value: 0.2},
+          { key: "Obrigações", value: 4.5 },
+          { key: "Bar", value: 3},
+          { key: "TCC", value: 3},
+        ],
+      }
+    ],
+  },
+];;
+const story = makeStory(div, steps);
+const onChange = (value) => {
+  if (value < 1 / 7) {
+    story.render("zero", value * 7);
+  } else if (value < 2 / 7) {
+    story.render("one", (value - 1 / 7) * 7);
+  } else if (value < 3 / 7) {
+    story.render("two", (value - 2 / 7) * 7);
+  }else if (value < 4 / 7) {
+    story.render("tree", (value - 3 / 7) * 7);
+  }else if (value < 5 / 7) {
+    story.render("four", (value - 4 / 7) * 7);
+  }else if (value < 6 / 7) {
+    story.render("five", (value - 5 / 7) * 7);
+  }else{
+    story.render("six", (value - 6 / 7) * 7);
+  }
+}
+
+  </script>
+</html>
